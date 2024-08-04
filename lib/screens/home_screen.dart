@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'add_medicine_screen.dart';
-import '../models/medicine.dart';
+import 'package:remainderapp/screens/add_medicine_screen.dart';
+import '../models/medicine.dart'; // Import the Medicine class from models/medicine.dart
 import '../services/notification_service.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -44,7 +44,7 @@ class MedicineProvider with ChangeNotifier {
   List<Medicine> get medicines => _medicines;
 
   void addMedicine(Medicine medicine) {
-    _medicines.add(medicine);
+    _medicines.add(medicine); // Ensure Medicine here refers to the correct class
     NotificationService().scheduleNotification(medicine);
     notifyListeners();
   }
